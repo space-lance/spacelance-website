@@ -25,8 +25,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased py-2 relative`}
       >
+        <div className="flex justify-between items-center px-16 sticky w-full top-0 bg-transparent border-b border-neutral-600 z-20 backdrop-blur-xl" >
+          <h1 className="text-xl tracking-[3px] uppercase">SpaceLance</h1>
+          <div className="flex justify-around gap-8 text-lg px-4 py-3 rounded-xl font-semibold w-fit">
+            <button>Home</button>
+            <button>Services</button>
+            <button>Projects</button>
+            <button>Contact</button>
+          </div>
+        </div>
         {children}
       </body>
     </html>
