@@ -2,7 +2,12 @@
 import { motion } from 'motion/react'
 import { useState, useRef } from 'react'
 
-const projects = [
+interface Project {
+    id: string
+    hasVideo: boolean
+}
+
+const projects: Project[] = [
     { id: 'web-dev', hasVideo: true },
     { id: 'ui-ux', hasVideo: false },
     { id: 'content', hasVideo: false },
@@ -18,11 +23,11 @@ function ProjectCard({
     videoRef,
     className
 }: {
-    project: any
+    project: Project
     isHovered: boolean
     onMouseEnter: () => void
     onMouseLeave: () => void
-    videoRef?: any
+    videoRef?: React.RefObject<HTMLVideoElement>
     className?: string
 }) {
     return (
