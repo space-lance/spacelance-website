@@ -4,70 +4,69 @@ import { useRef } from 'react'
 
 const services = [
     {
-        id: 'web-dev',
+        id: 'web-ui',
+        title: 'Web Development & UI/UX',
+        category: 'Full Stack',
+        description: 'End-to-end web architecture and user interface engineering. Focused on scalability and conversion.',
+        metric: 'Next.js / React',
         icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
         ),
-        title: 'Web Architecture',
-        outcome: 'SCALABILITY_OPTIMIZED',
-        description: 'Custom full-stack solutions built with Next.js. Engineered for sub-second latency, SEO dominance, and high-concurrency handling.',
-    },
-    {
-        id: 'ui-ux',
-        icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-            </svg>
-        ),
-        title: 'Interface Engineering',
-        outcome: 'UX_SYSTEM_DESIGN',
-        description: 'User-centered design systems that merge aesthetics with complex functionality. From wireframes to atomic component libraries.',
+        pattern: 'radial-gradient(circle at 100% 100%, #262626 0%, #0a0a0a 50%)'
     },
     {
         id: 'software',
+        title: 'Software Solutions',
+        category: 'Engineering',
+        description: 'Custom software development for complex business logic, automation, and system integration.',
+        metric: 'System Arch',
         icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
         ),
-        title: 'SaaS Infrastructure',
-        outcome: 'ENTERPRISE_GRADE',
-        description: 'Robust backend architecture, microservices, and API development designed for mission-critical reliability and security.',
+        pattern: 'linear-gradient(45deg, #171717 25%, #0a0a0a 25%, #0a0a0a 50%, #171717 50%, #171717 75%, #0a0a0a 75%, #0a0a0a 100%)'
     },
     {
-        id: 'content',
+        id: 'vfx',
+        title: 'Visual Effects (VFX)',
+        category: 'Post-Production',
+        description: 'High-fidelity visual effects, compositing, and motion graphics for cinematic experiences.',
+        metric: '4K Rendering',
         icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-        ),
-        title: 'Technical Strategy',
-        outcome: 'CONVERSION_FOCUSED',
-        description: 'Strategic content and positioning that translates complex technical value into clear, compelling narratives for stakeholders.',
-    },
-    {
-        id: 'motion',
-        icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         ),
-        title: 'Interaction Design',
-        outcome: 'VISUAL_FLUIDITY',
-        description: 'High-fidelity motion graphics and micro-interactions that enhance usability without compromising application performance.',
+        pattern: 'radial-gradient(circle at 0% 0%, #333 0%, #0a0a0a 60%)'
     },
     {
-        id: 'brand',
+        id: 'content',
+        title: 'Content Creation',
+        category: 'Media Strategy',
+        description: 'Strategic digital content production designed to engage audiences and build brand authority.',
+        metric: 'Multi-Channel',
         icon: (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
         ),
-        title: 'Brand Systems',
-        outcome: 'MARKET_POSITIONING',
-        description: 'Comprehensive identity systems designed for digital-first companies. Logos, typography, and guidelines that scale.',
+        pattern: 'repeating-linear-gradient(90deg, #171717 0px, #171717 1px, transparent 1px, transparent 10px)'
+    },
+    {
+        id: 'dance-singing',
+        title: 'Dance & Singing',
+        category: 'Performance Arts',
+        description: 'Professional choreography and vocal production for multimedia events and digital showcases.',
+        metric: 'Live Production',
+        icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+        ),
+        pattern: 'conic-gradient(from 0deg at 50% 50%, #1a1a1a 0%, #0a0a0a 100%)'
     },
 ]
 
@@ -78,45 +77,64 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     return (
         <motion.div
             ref={cardRef}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative"
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            className="group"
         >
-            <div className="h-full bg-neutral-900/40 backdrop-blur-sm border border-neutral-800 rounded-xl p-8 transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-neutral-950/50 flex flex-col">
+            <div className="bg-[#0f0f0f] border border-neutral-800 rounded-3xl p-3 hover:border-neutral-600 transition-all duration-300 hover:shadow-2xl hover:shadow-neutral-900/50 flex flex-col h-full">
 
-                {/* Header: Icon & Outcome Tag */}
-                <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                        {service.icon}
+                {/* 1. Visual Area (Replacing the NFT Art) */}
+                <div
+                    className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-neutral-900 border border-neutral-800/50 group-hover:border-neutral-700 transition-colors"
+                >
+                    {/* Abstract Technical Pattern Background */}
+                    <div
+                        className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 ease-out"
+                        style={{ background: service.pattern, backgroundSize: '20px 20px' }}
+                    />
+
+                    {/* Noise Texture Overlay */}
+                    <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")` }} />
+
+                    {/* Floating Icon Badge (Top Left) */}
+                    <div className="absolute top-4 left-4">
+                        <div className="h-10 w-10 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-neutral-800 flex items-center justify-center text-white shadow-lg">
+                            {service.icon}
+                        </div>
                     </div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600 bg-neutral-900/50 border border-neutral-800 px-2 py-1 rounded group-hover:text-neutral-400 group-hover:border-neutral-700 transition-colors">
-                        {service.outcome}
-                    </span>
+
+                    {/* Category Badge (Top Right) */}
+                    <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1 rounded-full bg-neutral-950/50 backdrop-blur-sm border border-neutral-800 text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                            {service.category}
+                        </span>
+                    </div>
                 </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-bold text-neutral-200 mb-3 group-hover:text-white transition-colors">
-                    {service.title}
-                </h3>
+                {/* 2. Content Area */}
+                <div className="px-2 pb-2 flex flex-col grow">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neutral-200 transition-colors">
+                        {service.title}
+                    </h3>
 
-                <p className="text-neutral-500 text-sm leading-relaxed mb-8 grow">
-                    {service.description}
-                </p>
+                    <p className="text-neutral-500 text-sm leading-relaxed mb-6 line-clamp-2">
+                        {service.description}
+                    </p>
 
-                {/* Arrow indicator */}
-                <div className="flex items-center gap-2 text-neutral-500 group-hover:text-white transition-colors duration-300 mt-auto pt-6 border-t border-neutral-800/50">
-                    <span className="text-xs font-semibold uppercase tracking-wide">Details</span>
-                    <motion.svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 4 }}
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </motion.svg>
+                    {/* 3. Bottom Action Row (Replacing Bid/Auction) */}
+                    <div className="flex items-center justify-between pt-4 border-t border-neutral-800/50 mt-auto">
+                        {/* Metric (Replacing Price) */}
+                        <div className="flex flex-col">
+                            <span className="text-[10px] text-neutral-600 uppercase tracking-wider font-mono mb-0.5">Tech Stack</span>
+                            <span className="text-sm font-medium text-neutral-300 font-mono">{service.metric}</span>
+                        </div>
+
+                        {/* Button (Replacing Auction Button) */}
+                        <button className="px-5 py-2 rounded-full bg-neutral-100 text-neutral-950 text-xs font-bold hover:bg-white hover:scale-105 transition-all duration-200 shadow-lg shadow-white/5">
+                            Details
+                        </button>
+                    </div>
                 </div>
             </div>
         </motion.div>
@@ -129,69 +147,57 @@ export default function ServicesSection() {
 
     return (
         <section id="services" ref={sectionRef} className="py-32 px-4 md:px-12 lg:px-20 relative overflow-hidden bg-neutral-950">
-            {/* Subtle Grid Background */}
-            <div className="absolute inset-0 opacity-[0.03]"
+            {/* Background Grid */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
-                    backgroundImage: `linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
+                    backgroundImage: `linear-gradient(#404040 1px, transparent 1px), linear-gradient(90deg, #404040 1px, transparent 1px)`,
+                    backgroundSize: '32px 32px'
                 }}
             />
 
-            {/* Section header */}
-            <div className="max-w-4xl mx-auto text-center mb-24 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/80 mb-6 backdrop-blur-sm"
-                >
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
-                    <span className="text-xs font-mono text-neutral-400 uppercase tracking-wide">Capabilities</span>
-                </motion.div>
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header Row */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6 }}
+                            className="inline-flex items-center gap-2 mb-4"
+                        >
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-200" />
+                            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wide">Our Expertise</span>
+                        </motion.div>
 
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
-                >
-                    Engineered for <span className="text-neutral-500">Growth</span>
-                </motion.h2>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="text-4xl md:text-5xl font-bold text-white tracking-tight"
+                        >
+                            Explore <span className="text-neutral-600">Services</span>
+                        </motion.h2>
+                    </div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto"
-                >
-                    Full-spectrum digital architecture designed to transform complex requirements into
-                    market-leading products. Precision, performance, and scalability.
-                </motion.p>
-            </div>
-
-            {/* Services grid */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-                {services.map((service, index) => (
-                    <ServiceCard key={service.id} service={service} index={index} />
-                ))}
-            </div>
-
-            {/* Bottom CTA */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-center mt-20 relative z-10"
-            >
-                <div className="inline-block p-px rounded-full bg-linear-to-r from-neutral-800 via-neutral-700 to-neutral-800">
-                    <button className="px-8 py-3 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-900 transition-colors flex items-center gap-3">
-                        View Full Tech Stack
-                        <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="max-w-md"
+                    >
+                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+                            We provide a comprehensive suite of digital services ranging from software engineering to creative performance arts.
+                        </p>
+                    </motion.div>
                 </div>
-            </motion.div>
+
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {services.map((service, index) => (
+                        <ServiceCard key={service.id} service={service} index={index} />
+                    ))}
+                </div>
+            </div>
         </section>
     )
 }
