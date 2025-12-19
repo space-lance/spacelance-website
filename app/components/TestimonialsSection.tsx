@@ -8,7 +8,7 @@ const testimonials = [
         name: 'Sarah Chen',
         role: 'CEO',
         company: 'TechFlow',
-        text: 'SpaceLance transformed our entire digital presence. The attention to detail and commitment to quality exceeded every expectation. Our conversion rates increased by 340%.',
+        text: 'SpaceLance transformed our entire digital infrastructure. The attention to latency and security exceeded our enterprise requirements.',
         rating: 5,
         avatar: 'SC',
     },
@@ -16,7 +16,7 @@ const testimonials = [
         name: 'Marcus Johnson',
         role: 'Founder',
         company: 'Elevate Studios',
-        text: 'Working with SpaceLance was a game-changer. They don\'t just build products—they craft experiences that users genuinely love. Highly recommended.',
+        text: 'They don\'t just build software; they engineer outcomes. The scalability of the platform has allowed us to grow 10x without a hitch.',
         rating: 5,
         avatar: 'MJ',
     },
@@ -24,7 +24,7 @@ const testimonials = [
         name: 'Elena Rodriguez',
         role: 'Product Director',
         company: 'Nexus Labs',
-        text: 'The team\'s technical expertise combined with their design sensibility is rare. They delivered a platform that our users can\'t stop raving about.',
+        text: 'Technical expertise combined with pragmatic product strategy. They delivered a complex dashboard that our data scientists actually enjoy using.',
         rating: 5,
         avatar: 'ER',
     },
@@ -32,35 +32,36 @@ const testimonials = [
         name: 'David Park',
         role: 'CTO',
         company: 'Quantum AI',
-        text: 'From day one, SpaceLance understood our vision. The final product was not only beautiful but incredibly performant. A true partnership.',
+        text: 'From architecture to deployment, the process was flawless. Their code quality sets a new standard for our internal teams.',
         rating: 5,
         avatar: 'DP',
     },
     {
         name: 'Aisha Patel',
-        role: 'Head of Digital',
+        role: 'VP of Engineering',
         company: 'GlobalReach',
-        text: 'We\'ve worked with many agencies, but SpaceLance stands apart. Their process is seamless, communication is excellent, and results speak for themselves.',
+        text: 'We audit every vendor rigorosly. SpaceLance passed with flying colors. A true partner for mission-critical development.',
         rating: 5,
         avatar: 'AP',
     },
     {
         name: 'James Mitchell',
-        role: 'Founder & CEO',
+        role: 'Director',
         company: 'StartScale',
-        text: 'SpaceLance helped us launch our MVP in record time without sacrificing quality. They\'re now our go-to partner for all digital initiatives.',
+        text: 'Launched our MVP in record time. The modular architecture they built allowed us to iterate faster than our competitors.',
         rating: 5,
         avatar: 'JM',
     },
 ]
 
+// Minimalist Star Component
 function StarRating({ rating }: { rating: number }) {
     return (
-        <div className="flex gap-1">
+        <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
                 <svg
                     key={i}
-                    className={`w-4 h-4 ${i < rating ? 'text-amber-400' : 'text-neutral-700'}`}
+                    className={`w-3 h-3 ${i < rating ? 'text-white' : 'text-neutral-800'}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -73,44 +74,31 @@ function StarRating({ rating }: { rating: number }) {
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
     return (
-        <div className="w-[350px] sm:w-[400px] mx-3 group">
-            <div className="h-full bg-[#141414] border border-[#262626] rounded-3xl p-8 transition-all duration-500 hover:border-[#404040] hover:bg-[#1a1a1a] relative overflow-hidden">
-                {/* Subtle gradient on hover */}
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-linear-to-br from-indigo-500/10 to-purple-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+        <div className="w-[400px] mx-4 group">
+            <div className="h-full bg-neutral-900/40 backdrop-blur-sm border border-neutral-800 p-8 transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-900/80">
 
-                {/* Quote icon */}
-                <div className="mb-6">
-                    <svg className="w-10 h-10 text-indigo-500/30" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+                {/* Header: User Info */}
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="w-10 h-10 rounded bg-neutral-800 border border-neutral-700 flex items-center justify-center text-white text-xs font-mono font-medium">
+                        {testimonial.avatar}
+                    </div>
+                    <div>
+                        <p className="font-medium text-white text-sm">{testimonial.name}</p>
+                        <p className="text-xs text-neutral-500 font-mono uppercase tracking-wide">
+                            {testimonial.role} <span className="text-neutral-700">/</span> {testimonial.company}
+                        </p>
+                    </div>
                 </div>
 
                 {/* Testimonial text */}
-                <p className="text-neutral-300 text-base leading-relaxed mb-8 relative z-10">
+                <p className="text-neutral-400 text-sm leading-relaxed mb-6">
                     &quot;{testimonial.text}&quot;
                 </p>
 
-                {/* Rating */}
-                <div className="mb-6">
+                {/* Footer: Rating */}
+                <div className="flex items-center justify-between border-t border-neutral-800/50 pt-4">
                     <StarRating rating={testimonial.rating} />
-                </div>
-
-                {/* Divider */}
-                <div className="w-full h-px bg-linear-to-r from-transparent via-[#404040] to-transparent mb-6" />
-
-                {/* Author info */}
-                <div className="flex items-center gap-4 relative z-10">
-                    {/* Avatar */}
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm">
-                        {testimonial.avatar}
-                    </div>
-
-                    <div>
-                        <p className="font-semibold text-white">{testimonial.name}</p>
-                        <p className="text-sm text-neutral-500">
-                            {testimonial.role} at <span className="text-neutral-400">{testimonial.company}</span>
-                        </p>
-                    </div>
+                    <span className="text-[10px] text-neutral-600 font-mono uppercase">Verified Partner</span>
                 </div>
             </div>
         </div>
@@ -122,67 +110,71 @@ export default function TestimonialsSection() {
     const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
     return (
-        <section ref={sectionRef} className="py-32 relative overflow-hidden">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-linear-to-b from-transparent via-purple-950/5 to-transparent pointer-events-none" />
+        <section ref={sectionRef} className="py-32 relative overflow-hidden bg-neutral-950 border-t border-neutral-900">
+
+            {/* Background Grid Pattern */}
+            <div className="absolute inset-0 opacity-[0.03]"
+                style={{
+                    backgroundImage: `linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)`,
+                    backgroundSize: '40px 40px'
+                }}
+            />
 
             {/* Section header */}
-            <div className="max-w-3xl mx-auto text-center mb-20 px-4">
+            <div className="max-w-4xl mx-auto text-center mb-20 px-4 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#262626] bg-[#141414] mb-6"
+                    className="inline-flex items-center gap-2 mb-6"
                 >
-                    <span className="w-2 h-2 rounded-full bg-amber-500" />
-                    <span className="text-sm text-neutral-400">Client Testimonials</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                    <span className="text-xs font-mono text-neutral-400 uppercase tracking-wide">Client Feedback</span>
                 </motion.div>
 
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-6"
+                    className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6"
                 >
-                    Trusted by
-                    <br />
-                    <span className="text-gradient-accent">Industry Leaders</span>
+                    Trusted by <span className="text-neutral-500">Industry Leaders</span>
                 </motion.h2>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-neutral-400 text-lg leading-relaxed"
+                    className="text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto"
                 >
-                    Don&apos;t just take our word for it. Here&apos;s what our partners
-                    say about working with us.
+                    We partner with ambitious brands to build scalable digital products.
+                    Here is what they say about our engineering standards.
                 </motion.p>
             </div>
 
-            {/* Stats bar */}
+            {/* Technical Stats Bar */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="max-w-4xl mx-auto mb-16 px-4"
+                className="max-w-5xl mx-auto mb-20 px-4 relative z-10"
             >
-                <div className="glass rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div className="text-center">
-                        <p className="text-3xl md:text-4xl font-bold text-gradient-accent">150+</p>
-                        <p className="text-sm text-neutral-500 mt-1">Projects Delivered</p>
+                <div className="border border-neutral-800 bg-neutral-900/30 backdrop-blur-md grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+                    <div className="p-6 text-center group hover:bg-neutral-900/50 transition-colors">
+                        <p className="text-3xl font-mono font-bold text-white group-hover:text-neutral-200">150<span className="text-neutral-600">+</span></p>
+                        <p className="text-xs text-neutral-500 uppercase tracking-widest mt-2">Projects Shipped</p>
                     </div>
-                    <div className="text-center">
-                        <p className="text-3xl md:text-4xl font-bold text-gradient-accent">98%</p>
-                        <p className="text-sm text-neutral-500 mt-1">Client Satisfaction</p>
+                    <div className="p-6 text-center group hover:bg-neutral-900/50 transition-colors">
+                        <p className="text-3xl font-mono font-bold text-white group-hover:text-neutral-200">99.9<span className="text-neutral-600">%</span></p>
+                        <p className="text-xs text-neutral-500 uppercase tracking-widest mt-2">Uptime Guaranteed</p>
                     </div>
-                    <div className="text-center">
-                        <p className="text-3xl md:text-4xl font-bold text-gradient-accent">4.9</p>
-                        <p className="text-sm text-neutral-500 mt-1">Average Rating</p>
+                    <div className="p-6 text-center group hover:bg-neutral-900/50 transition-colors">
+                        <p className="text-3xl font-mono font-bold text-white group-hover:text-neutral-200">5.0<span className="text-neutral-600">/5</span></p>
+                        <p className="text-xs text-neutral-500 uppercase tracking-widest mt-2">Clutch Rating</p>
                     </div>
-                    <div className="text-center">
-                        <p className="text-3xl md:text-4xl font-bold text-gradient-accent">5+</p>
-                        <p className="text-sm text-neutral-500 mt-1">Years Experience</p>
+                    <div className="p-6 text-center group hover:bg-neutral-900/50 transition-colors">
+                        <p className="text-3xl font-mono font-bold text-white group-hover:text-neutral-200">24<span className="text-neutral-600">/7</span></p>
+                        <p className="text-xs text-neutral-500 uppercase tracking-widest mt-2">Support Access</p>
                     </div>
                 </div>
             </motion.div>
@@ -192,45 +184,40 @@ export default function TestimonialsSection() {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col gap-6 marquee-mask"
+                className="flex flex-col gap-8 relative z-10"
+                style={{
+                    maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)'
+                }}
             >
-                <Marquee direction="right" speed={30} pauseOnHover>
-                    {testimonials.slice(0, 3).map((testimonial, index) => (
+                <Marquee direction="left" speed={40} pauseOnHover gradient={false}>
+                    {testimonials.map((testimonial, index) => (
                         <TestimonialCard key={`row1-${index}`} testimonial={testimonial} />
-                    ))}
-                    {testimonials.slice(0, 3).map((testimonial, index) => (
-                        <TestimonialCard key={`row1-dup-${index}`} testimonial={testimonial} />
                     ))}
                 </Marquee>
 
-                <Marquee direction="left" speed={30} pauseOnHover>
-                    {testimonials.slice(3).map((testimonial, index) => (
+                <Marquee direction="right" speed={40} pauseOnHover gradient={false}>
+                    {testimonials.slice().reverse().map((testimonial, index) => (
                         <TestimonialCard key={`row2-${index}`} testimonial={testimonial} />
-                    ))}
-                    {testimonials.slice(3).map((testimonial, index) => (
-                        <TestimonialCard key={`row2-dup-${index}`} testimonial={testimonial} />
                     ))}
                 </Marquee>
             </motion.div>
 
-            {/* CTA */}
+            {/* Bottom CTA */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-center mt-16 px-4"
+                className="text-center mt-20 relative z-10"
             >
-                <p className="text-neutral-500 mb-4">Ready to join our success stories?</p>
-                <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="btn-primary px-8 py-4 rounded-full font-semibold text-white inline-flex items-center gap-2 relative z-10"
-                >
-                    <span className="relative z-10">Start Your Project</span>
-                    <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </motion.button>
+                <div className="inline-block p-px rounded-full bg-linear-to-r from-neutral-800 via-neutral-700 to-neutral-800">
+                    <button className="px-8 py-3 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-900 transition-colors flex items-center gap-3">
+                        Read Detailed Case Studies
+                        <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
             </motion.div>
         </section>
     )
