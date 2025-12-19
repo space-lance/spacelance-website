@@ -86,7 +86,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
                 {/* 1. Visual Area (Replacing the NFT Art) */}
                 <div
-                    className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-neutral-900 border border-neutral-800/50 group-hover:border-neutral-700 transition-colors"
+                    className="relative aspect-4/3 rounded-2xl overflow-hidden mb-5 bg-neutral-900 border border-neutral-800/50 group-hover:border-neutral-700 transition-colors"
                 >
                     {/* Abstract Technical Pattern Background */}
                     <div
