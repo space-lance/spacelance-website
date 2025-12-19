@@ -27,7 +27,7 @@ function ProjectCard({
     isHovered: boolean
     onMouseEnter: () => void
     onMouseLeave: () => void
-    videoRef?: React.RefObject<HTMLVideoElement>
+    videoRef?: React.RefObject<HTMLVideoElement | null>
     className?: string
 }) {
     return (
