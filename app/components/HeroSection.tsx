@@ -6,11 +6,14 @@ const words = ['Digital Ecosystems', 'SaaS Platforms', 'Fintech Solutions', 'Ent
 
 function KineticText() {
     return (
-        <span className="inline-block min-w-[320px] text-left relative h-[1.2em]">
+        // Changed: Used flex & justify-center to force content to the middle
+        // Removed: text-left, min-w-[320px]
+        <span className="relative flex justify-center items-center h-[1.2em] w-full overflow-hidden">
             {words.map((word, wordIndex) => (
                 <motion.span
                     key={wordIndex}
-                    className="absolute left-0 top-0 w-full"
+                    // Changed: absolute inset-x-0 + flex justify-center ensures strict centering
+                    className="absolute inset-x-0 top-0 flex justify-center"
                     initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
                     animate={{
                         opacity: [0, 1, 1, 0],
@@ -25,14 +28,13 @@ function KineticText() {
                         times: [0, 0.1, 0.9, 1],
                     }}
                 >
-                    <span className="bg-clip-text text-transparent bg-linear-to-r from-white via-neutral-200 to-neutral-500 whitespace-nowrap">
+                    <span className="bg-clip-text text-transparent bg-linear-to-r from-white via-neutral-200 to-neutral-500 whitespace-nowrap px-4">
                         {word}
                     </span>
                 </motion.span>
             ))}
-            {/* Invisible duplicate to force container width/height if needed, 
-                though strict dimensions on parent usually work better */}
-            <span className="invisible" aria-hidden="true">Digital Ecosystems</span>
+            {/* Invisible duplicate creates the layout height/width footprint */}
+            <span className="invisible opacity-0">Digital Ecosystems</span>
         </span>
     )
 }
@@ -103,32 +105,21 @@ export default function HeroSection() {
             {/* Main Content */}
             <motion.div
                 style={{ y, opacity }}
-                className="mx-auto text-center z-10 max-w-5xl px-4 relative flex flex-col items-center"
+                className="mx-auto text-center z-10 max-w-5xl px-4 relative flex flex-col items-center w-full"
             >
-                {/* Announcement Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm"
-                >
-                    <span className="flex h-2 w-2 rounded-full bg-neutral-400"></span>
-                    <span className="text-xs font-medium text-neutral-400 uppercase tracking-wide">v2.0 is now live</span>
-                </motion.div>
-
                 {/* Headline */}
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-8"
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-8 w-full"
                 >
                     Build scalable
                     <br />
-                    {/* Added explicit height block to prevent overlap during animation */}
-                    <span className="block h-[1.3em] overflow-visible w-full">
+                    {/* The wrapper is now full width and flex centered */}
+                    <div className="flex justify-center w-full">
                         <KineticText />
-                    </span>
+                    </div>
                 </motion.h1>
 
                 {/* Subtext */}
@@ -167,21 +158,6 @@ export default function HeroSection() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </motion.button>
-                </motion.div>
-
-                {/* Social Proof */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.8 }}
-                    className="mt-20 pt-10 border-t border-neutral-800 w-full max-w-4xl"
-                >
-                    <p className="text-xs text-neutral-600 uppercase tracking-widest mb-8 font-semibold">Powering next-gen teams</p>
-                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                        {['ACME Corp', 'Quantum', 'Echo', 'Nebula', 'Vertex'].map((brand) => (
-                            <span key={brand} className="text-xl md:text-2xl font-bold text-white font-serif">{brand}</span>
-                        ))}
-                    </div>
                 </motion.div>
             </motion.div>
 
