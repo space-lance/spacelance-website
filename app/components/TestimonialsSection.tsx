@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
                 Built on Client Trust
             </h2>
             <p className='text-center text-neutral-400 w-full md:w-8/12 lg:w-6/12 mx-auto mt-4 text-sm md:text-base'>
-                Don't just take our word for it. Hear from the clients who've partnered with us to create
+                Don&apos;t just take our word for it. Hear from the clients who&apos;ve partnered with us to create
                 exceptional digital experiences that drive real business outcomes.
             </p>
 
