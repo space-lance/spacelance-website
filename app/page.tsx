@@ -7,9 +7,15 @@ export default function Home() {
   return (
     <div className='scroll-smooth'>
       <HeroSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <TestimonialsSection />
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="projects">
+        <ProjectsSection />
+      </div>
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
     </div>
   )
 }
