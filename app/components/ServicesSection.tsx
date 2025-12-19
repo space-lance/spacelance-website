@@ -1,6 +1,7 @@
 'use client'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import { useRouter } from 'next/navigation'
 
 const services = [
     {
@@ -73,6 +74,7 @@ const services = [
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
     const cardRef = useRef<HTMLDivElement>(null)
     const isInView = useInView(cardRef, { once: true, margin: '-50px' })
+    const router = useRouter()
 
     return (
         <motion.div
@@ -129,15 +131,14 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                             <span className="text-[10px] text-neutral-600 uppercase tracking-wider font-mono mb-0.5">Tech Stack</span>
                             <span className="text-sm font-medium text-neutral-300 font-mono">{service.metric}</span>
                         </div>
-
                         {/* Button (Replacing Auction Button) */}
-                        <button className="px-5 py-2 rounded-full bg-neutral-100 text-neutral-950 text-xs font-bold hover:bg-white hover:scale-105 transition-all duration-200 shadow-lg shadow-white/5">
+                        <button onClick={() => router.push('/services')} className="px-5 py-2 rounded-full bg-neutral-100 text-neutral-950 text-xs font-bold hover:bg-white hover:scale-105 transition-all duration-200 shadow-lg shadow-white/5">
                             Details
                         </button>
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </motion.div >
     )
 }
 
