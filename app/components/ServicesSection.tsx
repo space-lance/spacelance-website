@@ -100,7 +100,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                     {service.title}
                 </h3>
 
-                <p className="text-neutral-500 text-sm leading-relaxed mb-8 flex-grow">
+                <p className="text-neutral-500 text-sm leading-relaxed mb-8 grow">
                     {service.description}
                 </p>
 
@@ -183,7 +183,7 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-center mt-20 relative z-10"
             >
-                <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800">
+                <div className="inline-block p-px rounded-full bg-linear-to-r from-neutral-800 via-neutral-700 to-neutral-800">
                     <button className="px-8 py-3 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-900 transition-colors flex items-center gap-3">
                         View Full Tech Stack
                         <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

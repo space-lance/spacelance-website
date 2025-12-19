@@ -25,7 +25,7 @@ function KineticText() {
                         times: [0, 0.1, 0.9, 1],
                     }}
                 >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-500 whitespace-nowrap">
+                    <span className="bg-clip-text text-transparent bg-linear-to-r from-white via-neutral-200 to-neutral-500 whitespace-nowrap">
                         {word}
                     </span>
                 </motion.span>
@@ -93,7 +93,7 @@ export default function HeroSection() {
             className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-neutral-950 selection:bg-white/20"
         >
             {/* Background Atmosphere */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-900 via-neutral-950 to-black pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-neutral-900 via-neutral-950 to-black pointer-events-none" />
             <GridPattern />
 
             {/* Subtle Lighting Background */}
@@ -185,7 +185,7 @@ export default function HeroSection() {
                 </motion.div>
             </motion.div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
         </section>
     )
 }

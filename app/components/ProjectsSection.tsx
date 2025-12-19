@@ -76,7 +76,7 @@ function ProjectCard({ project, index, isLarge = false }: { project: Project; in
             className={`group relative flex flex-col justify-between p-8 rounded-xl border border-neutral-800 bg-neutral-900/40 hover:bg-neutral-900/80 hover:border-neutral-600 transition-all duration-300 cursor-pointer overflow-hidden ${isLarge ? 'md:col-span-2' : 'col-span-1'}`}
         >
             {/* Subtle Gradient Glow on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             {/* Top Section: Header */}
             <div className="relative z-10">
