@@ -1,7 +1,7 @@
 'use client'
-import { motion, useInView, useScroll, useTransform } from 'motion/react'
+import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import { Rocket, Cpu, Cloud, Shield, BarChart, Satellite, ArrowRight, CheckCircle2, Terminal, Layers } from "lucide-react";
+import { Rocket, Cpu, Cloud, Shield, BarChart, Satellite, ArrowRight, CheckCircle2, Terminal } from "lucide-react";
 import Link from 'next/link';
 
 // --- Data Configuration ---
@@ -141,7 +141,10 @@ function DetailedServiceCard({ service, index }: { service: typeof services[0]; 
               <span className="text-[10px] text-neutral-600 uppercase tracking-wider font-mono mb-0.5">Tech Stack</span>
               <span className="text-sm font-medium text-neutral-300 font-mono">{service.metric}</span>
             </div>
-            <button className="h-8 w-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-600 transition-all">
+            <button
+              className="h-8 w-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-600 transition-all"
+              aria-label={`View ${service.title} details`}
+            >
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
