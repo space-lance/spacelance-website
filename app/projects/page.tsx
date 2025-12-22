@@ -169,9 +169,9 @@ function ProjectDetailCard({ project, index }: { project: Project; index: number
             className="group relative bg-neutral-900/50 border border-neutral-800 rounded-2xl overflow-hidden hover:border-neutral-600 transition-all duration-300"
         >
             {/* Visual Header */}
-            <div className="relative h-64 bg-linear-to-br from-neutral-800 via-neutral-900 to-neutral-950 border-b border-neutral-800">
+            <div className="relative h-64 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 border-b border-neutral-800">
                 {/* Animated Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-neutral-950/80 backdrop-blur-sm border border-neutral-700 text-xs font-mono uppercase tracking-wider text-neutral-300">
@@ -285,7 +285,7 @@ export default function ProjectsPage() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
                     >
-                        Our <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-400">Work</span>
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Work</span>
                     </motion.h1>
 
                     <motion.p
@@ -343,7 +343,7 @@ export default function ProjectsPage() {
             {/* CTA Section */}
             <section className="px-4 md:px-12 lg:px-20 mt-32">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-linear-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
                         <div className="absolute inset-0 opacity-5" style={{
                             backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
                             backgroundSize: '32px 32px'
