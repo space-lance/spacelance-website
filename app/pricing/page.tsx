@@ -105,7 +105,7 @@ function PricingCard({ tier, index }: { tier: typeof pricingTiers[0]; index: num
         >
             {tier.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <div className="px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
+                    <div className="px-4 py-1.5 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
                         Most Popular
                     </div>
                 </div>
@@ -113,7 +113,7 @@ function PricingCard({ tier, index }: { tier: typeof pricingTiers[0]; index: num
 
             <div className={`bg-neutral-900/50 border-2 ${tier.borderColor} rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl relative overflow-hidden h-full flex flex-col ${tier.popular ? 'shadow-purple-500/10 shadow-xl' : ''}`}>
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${tier.color} opacity-0 hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${tier.color} opacity-0 hover:opacity-100 transition-opacity duration-500`} />
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
@@ -143,11 +143,11 @@ function PricingCard({ tier, index }: { tier: typeof pricingTiers[0]; index: num
                     </div>
 
                     {/* Features */}
-                    <div className="mb-8 flex-grow">
+                    <div className="mb-8 grow">
                         <div className="space-y-3">
                             {tier.features.map((feature, i) => (
                                 <div key={i} className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                                     <span className="text-sm text-neutral-300">{feature}</span>
                                 </div>
                             ))}
@@ -158,8 +158,8 @@ function PricingCard({ tier, index }: { tier: typeof pricingTiers[0]; index: num
                     <Link
                         href="/contact"
                         className={`w-full py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all duration-200 ${tier.popular
-                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/50 hover:scale-105'
-                                : 'bg-neutral-800 text-white hover:bg-neutral-700 border border-neutral-700'
+                            ? 'bg-linear-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/50 hover:scale-105'
+                            : 'bg-neutral-800 text-white hover:bg-neutral-700 border border-neutral-700'
                             }`}
                     >
                         {tier.price === 'Custom' ? 'Request Quote' : 'Get Started'}
@@ -200,7 +200,7 @@ export default function PricingPage() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
                     >
-                        Simple, <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">Fair</span> Pricing
+                        Simple, <span className="text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-400">Fair</span> Pricing
                     </motion.h1>
 
                     <motion.p
@@ -300,7 +300,7 @@ export default function PricingPage() {
                                 className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-neutral-600 transition-colors"
                             >
                                 <div className="flex gap-4">
-                                    <Info className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+                                    <Info className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
                                     <div>
                                         <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
                                         <p className="text-neutral-400 leading-relaxed">{faq.a}</p>
@@ -315,7 +315,7 @@ export default function PricingPage() {
             {/* CTA Section */}
             <section className="px-4 md:px-12 lg:px-20">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
+                    <div className="bg-linear-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
                         <div className="absolute inset-0 opacity-5" style={{
                             backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
                             backgroundSize: '32px 32px'

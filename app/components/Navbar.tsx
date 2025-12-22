@@ -17,7 +17,7 @@ export default function Navbar() {
                         <Link href="/services" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
                             Services
                         </Link>
-                        <Link href="/#projects" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                        <Link href="/projects" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
                             Projects
                         </Link>
                         <Link href="/methodology" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
