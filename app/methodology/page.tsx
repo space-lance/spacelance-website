@@ -100,12 +100,12 @@ function MethodologyCard({ step, index }: { step: typeof methodologySteps[0]; in
         >
             {/* Connection Line (except last item) */}
             {index < methodologySteps.length - 1 && (
-                <div className="hidden lg:block absolute top-24 left-1/2 w-0.5 h-24 bg-gradient-to-b from-neutral-700 to-transparent" />
+                <div className="hidden lg:block absolute top-24 left-1/2 w-0.5 h-24 bg-linear-to-b from-neutral-700 to-transparent" />
             )}
 
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-2xl p-6 hover:border-neutral-600 transition-all duration-300 relative overflow-hidden">
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 {/* Content */}
                 <div className="relative z-10">
@@ -179,7 +179,7 @@ export default function MethodologyPage() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
                     >
-                        Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Success</span>
+                        Engineered for <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">Success</span>
                     </motion.h1>
 
                     <motion.p
@@ -241,7 +241,7 @@ export default function MethodologyPage() {
             {/* CTA Section */}
             <section className="px-4 md:px-12 lg:px-20">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
+                    <div className="bg-linear-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-12 text-center relative overflow-hidden">
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-5" style={{
                             backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
