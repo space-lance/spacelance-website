@@ -14,15 +14,18 @@ export default function Navbar() {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-8">
-                        {['Services', 'Projects', 'Methodology', 'Pricing'].map((item) => (
-                            <Link
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-                            >
-                                {item}
-                            </Link>
-                        ))}
+                        <Link href="/services" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                            Services
+                        </Link>
+                        <Link href="/#projects" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                            Projects
+                        </Link>
+                        <Link href="/methodology" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                            Methodology
+                        </Link>
+                        <Link href="/pricing" className="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                            Pricing
+                        </Link>
                     </div>
 
                     {/* CTA Button */}
